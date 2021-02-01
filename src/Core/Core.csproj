@@ -1,0 +1,68 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- Assembly -->
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Cdelta</AssemblyName>
+    <RootNamespace>Cdelta</RootNamespace>
+    <EmbedAllSources>true</EmbedAllSources>
+    <AssemblyOriginatorKeyFile>Cdelta.pfx</AssemblyOriginatorKeyFile>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <!-- NuGet -->
+  <PropertyGroup>
+    <VersionPrefix>1.0.0</VersionPrefix>
+    <VersionSuffix>preview</VersionSuffix>
+    <Authors>David Sungaila</Authors>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageIcon>Icon_128.png</PackageIcon>
+    <PackageProjectUrl>https://github.com/sungaila/Cdelta</PackageProjectUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/sungaila/Cdelta/master/etc/Icon_128.png</PackageIconUrl>
+    <Description>A C# source generator for finite-state machines.</Description>
+    <PackageReleaseNotes></PackageReleaseNotes>
+    <PackageTags>C# DFA NFA</PackageTags>
+    <RepositoryUrl>https://github.com/sungaila/Cdelta.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+  </PropertyGroup>
+
+  <!-- C# compiler -->
+  <PropertyGroup>
+    <LangVersion>9.0</LangVersion>
+    <Nullable>enable</Nullable>
+    <Features>strict</Features>
+    <WarningsAsErrors>nullable;NU1605</WarningsAsErrors>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+
+  <!-- Debug builds -->
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <VersionSuffix>debug</VersionSuffix>
+  </PropertyGroup>
+
+  <!-- Release builds -->
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <SignAssembly>true</SignAssembly>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+
+  <!-- NuGet Icon -->
+  <ItemGroup>
+    <None Include="..\..\etc\Icon_128.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+  <!-- SourceLink build steps -->
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+</Project>
