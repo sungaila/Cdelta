@@ -1,11 +1,11 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <!-- Assembly -->
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net5.0</TargetFrameworks>
     <AssemblyName>Cdelta</AssemblyName>
     <RootNamespace>Cdelta</RootNamespace>
     <EmbedAllSources>true</EmbedAllSources>
-    <AssemblyOriginatorKeyFile>Cdelta.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>Cdelta.snk</AssemblyOriginatorKeyFile>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 
