@@ -1,0 +1,47 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <!-- Assembly -->
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Cdelta</AssemblyName>
+    <RootNamespace>Cdelta</RootNamespace>
+    <EmbedAllSources>true</EmbedAllSources>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <!-- C# compiler -->
+  <PropertyGroup>
+    <LangVersion>9.0</LangVersion>
+    <Nullable>enable</Nullable>
+    <Features>strict</Features>
+    <WarningsAsErrors>nullable;NU1605</WarningsAsErrors>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+  </PropertyGroup>
+
+  <!-- Debug builds -->
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <VersionSuffix>debug</VersionSuffix>
+    <NoWarn>1701;1702;3021</NoWarn>
+  </PropertyGroup>
+
+  <!-- Release builds -->
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <Optimize>true</Optimize>
+    <NoWarn>1701;1702;3021</NoWarn>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <None Include="obj\$(Configuration)\netstandard2.0\CdeltaLexer.cs" />
+    <None Include="obj\$(Configuration)\netstandard2.0\CdeltaParser.cs" />
+    <None Include="obj\$(Configuration)\netstandard2.0\CdeltaParserBaseListener.cs" />
+    <None Include="obj\$(Configuration)\netstandard2.0\CdeltaParserBaseVisitor.cs" />
+    <None Include="obj\$(Configuration)\netstandard2.0\CdeltaParserListener.cs" />
+    <None Include="obj\$(Configuration)\netstandard2.0\CdeltaParserVisitor.cs" />
+  </ItemGroup>
+
+  <!-- SourceLink build steps -->
+  <ItemGroup>
+    <PackageReference Include="Antlr4.CodeGenerator" Version="4.6.6" PrivateAssets="all" />
+    <PackageReference Include="Antlr4.Runtime" Version="4.6.6" PrivateAssets="all" />
+  </ItemGroup>
+</Project>

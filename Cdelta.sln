@@ -11,9 +11,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "src\Core\Core.csproj", "{14017185-C15A-4A26-BB6C-BE59C740CA5D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "src\Core\Core.csproj", "{14017185-C15A-4A26-BB6C-BE59C740CA5D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "src\Tests\Tests.csproj", "{B4188C3C-08D4-4A83-86A3-42E84304D46B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "src\Tests\Tests.csproj", "{B4188C3C-08D4-4A83-86A3-42E84304D46B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Grammar", "src\Grammar\Grammar.csproj", "{F87087C1-AD14-400F-A87C-01B5B80A9237}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,6 +31,10 @@ Global
 		{B4188C3C-08D4-4A83-86A3-42E84304D46B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B4188C3C-08D4-4A83-86A3-42E84304D46B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B4188C3C-08D4-4A83-86A3-42E84304D46B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F87087C1-AD14-400F-A87C-01B5B80A9237}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F87087C1-AD14-400F-A87C-01B5B80A9237}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F87087C1-AD14-400F-A87C-01B5B80A9237}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F87087C1-AD14-400F-A87C-01B5B80A9237}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

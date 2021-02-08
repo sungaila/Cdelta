@@ -1,0 +1,16 @@
+﻿namespace Cdelta.Tests
+{
+	internal abstract automaton LowerCamelCaseMachine<Cdelta.Tests.UnitTest1.DummyClass>
+	{
+		// available states
+		start state Init;
+		state UpperChar { enter; }
+		end state LowerChar { exit; }
+
+		// available transitions
+		transition Init LowerChar { enter; }
+		transition LowerChar LowerChar;
+		transition LowerChar UpperChar;
+		transition UpperChar LowerChar;
+	}
+}

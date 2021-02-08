@@ -1,12 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <!-- Assembly -->
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net5.0</TargetFrameworks>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>Cdelta</AssemblyName>
     <RootNamespace>Cdelta</RootNamespace>
     <EmbedAllSources>true</EmbedAllSources>
     <AssemblyOriginatorKeyFile>Cdelta.snk</AssemblyOriginatorKeyFile>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
   </PropertyGroup>
 
   <!-- NuGet -->
@@ -20,12 +21,14 @@
     <PackageProjectUrl>https://github.com/sungaila/Cdelta</PackageProjectUrl>
     <PackageIconUrl>https://raw.githubusercontent.com/sungaila/Cdelta/master/etc/Icon_128.png</PackageIconUrl>
     <Description>A C# source generator for finite-state machines.</Description>
-    <PackageReleaseNotes></PackageReleaseNotes>
+    <PackageReleaseNotes>Initial release</PackageReleaseNotes>
     <PackageTags>C# DFA NFA</PackageTags>
     <RepositoryUrl>https://github.com/sungaila/Cdelta.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <DevelopmentDependency>true</DevelopmentDependency>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
   </PropertyGroup>
 
   <!-- C# compiler -->
@@ -42,27 +45,27 @@
   <!-- Debug builds -->
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <VersionSuffix>debug</VersionSuffix>
+    <NoWarn>1701;1702;3021</NoWarn>
   </PropertyGroup>
 
   <!-- Release builds -->
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <SignAssembly>true</SignAssembly>
     <Optimize>true</Optimize>
+    <NoWarn>1701;1702;3021</NoWarn>
   </PropertyGroup>
-
+  
   <!-- NuGet Icon -->
   <ItemGroup>
-    <None Include="..\..\etc\Icon_128.png">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
+    <None Include="..\..\etc\Icon_128.png" Pack="True" PackagePath="" Visible="False" />
+    <None Include="$(OutputPath)\$(AssemblyName).dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="False" />
   </ItemGroup>
 
   <!-- SourceLink build steps -->
   <ItemGroup>
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="3.8.0" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.2" PrivateAssets="all" />
+    <PackageReference Include="Antlr4.Runtime" Version="4.6.6" />
   </ItemGroup>
 </Project>
