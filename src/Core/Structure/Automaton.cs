@@ -156,7 +156,7 @@ namespace Cdelta.Structure
             result.AppendLine("\t\t}");
 
             result.AppendLine("\t}");
-            result.Append("}");
+            result.Append('}');
 
             return result.ToString().Replace(Environment.NewLine, $"{Environment.NewLine}\t");
         }
@@ -189,7 +189,7 @@ namespace Cdelta.Structure
                 result.AppendLine($"{state.Identifier},");
             }
 
-            result.Append("}");
+            result.Append('}');
 
             return result.ToString().Replace(Environment.NewLine, $"{Environment.NewLine}\t");
         }

@@ -45,12 +45,12 @@ namespace Cdelta.Language
         void ExitCodeFile([NotNull] CdeltaParser.CodeFileContext context);
 
         /// <summary>
-        /// Enter a parse tree produced by <see cref="CdeltaParser.namespace"/>.
+        /// Enter a parse tree produced by <see cref="CdeltaParser.@namespace"/>.
         /// </summary>
         /// <param name="context">The parse tree.</param>
         void EnterNamespace([NotNull] CdeltaParser.NamespaceContext context);
         /// <summary>
-        /// Exit a parse tree produced by <see cref="CdeltaParser.namespace"/>.
+        /// Exit a parse tree produced by <see cref="CdeltaParser.@namespace"/>.
         /// </summary>
         /// <param name="context">The parse tree.</param>
         void ExitNamespace([NotNull] CdeltaParser.NamespaceContext context);

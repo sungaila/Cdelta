@@ -42,7 +42,7 @@ namespace Cdelta.Language
         Result VisitCodeFile([NotNull] CdeltaParser.CodeFileContext context);
 
         /// <summary>
-        /// Visit a parse tree produced by <see cref="CdeltaParser.namespace"/>.
+        /// Visit a parse tree produced by <see cref="CdeltaParser.@namespace"/>.
         /// </summary>
         /// <param name="context">The parse tree.</param>
         /// <return>The visitor result.</return>

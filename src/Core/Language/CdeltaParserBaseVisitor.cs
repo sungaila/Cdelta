@@ -48,7 +48,7 @@ namespace Cdelta.Language
         public virtual Result VisitCodeFile([NotNull] CdeltaParser.CodeFileContext context) { return VisitChildren(context); }
 
         /// <summary>
-        /// Visit a parse tree produced by <see cref="CdeltaParser.namespace"/>.
+        /// Visit a parse tree produced by <see cref="CdeltaParser.@namespace"/>.
         /// <para>
         /// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
         /// on <paramref name="context"/>.

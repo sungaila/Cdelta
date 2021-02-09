@@ -1,3 +1,4 @@
+#pragma warning disable IDE1006
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Cdelta.Tests
@@ -10,7 +11,7 @@ namespace Cdelta.Tests
         {
             var machine = new LowerCamelCase();
 
-            Assert.AreEqual<LowerCamelCase.State>(LowerCamelCaseMachine.State.Init, machine.CurrentState);
+            Assert.AreEqual(LowerCamelCaseMachine.State.Init, machine.CurrentState);
             Assert.IsFalse(machine.IsAcceptingState);
             Assert.IsFalse(machine.IsHalted);
         }
@@ -25,7 +26,7 @@ namespace Cdelta.Tests
                 machine.Invoke(c);
             }
 
-            Assert.AreEqual<LowerCamelCase.State>(LowerCamelCaseMachine.State.Init, machine.CurrentState);
+            Assert.AreEqual(LowerCamelCaseMachine.State.Init, machine.CurrentState);
             Assert.IsFalse(machine.IsAcceptingState);
             Assert.IsTrue(machine.IsHalted);
         }
@@ -40,7 +41,7 @@ namespace Cdelta.Tests
                 machine.Invoke(c);
             }
 
-            Assert.AreEqual<LowerCamelCase.State>(LowerCamelCaseMachine.State.Init, machine.CurrentState);
+            Assert.AreEqual(LowerCamelCaseMachine.State.Init, machine.CurrentState);
             Assert.IsFalse(machine.IsAcceptingState);
             Assert.IsTrue(machine.IsHalted);
         }
@@ -55,7 +56,7 @@ namespace Cdelta.Tests
                 machine.Invoke(c);
             }
 
-            Assert.AreEqual<LowerCamelCase.State>(LowerCamelCaseMachine.State.UpperChar, machine.CurrentState);
+            Assert.AreEqual(LowerCamelCaseMachine.State.UpperChar, machine.CurrentState);
             Assert.IsFalse(machine.IsAcceptingState);
             Assert.IsTrue(machine.IsHalted);
         }
@@ -70,7 +71,7 @@ namespace Cdelta.Tests
                 machine.Invoke(c);
             }
 
-            Assert.AreEqual<LowerCamelCase.State>(LowerCamelCaseMachine.State.LowerChar, machine.CurrentState);
+            Assert.AreEqual(LowerCamelCaseMachine.State.LowerChar, machine.CurrentState);
             Assert.IsTrue(machine.IsAcceptingState);
             Assert.IsFalse(machine.IsHalted);
         }
@@ -85,7 +86,7 @@ namespace Cdelta.Tests
                 machine.Invoke(c);
             }
 
-            Assert.AreEqual<LowerCamelCase.State>(LowerCamelCaseMachine.State.LowerChar, machine.CurrentState);
+            Assert.AreEqual(LowerCamelCaseMachine.State.LowerChar, machine.CurrentState);
             Assert.IsTrue(machine.IsAcceptingState);
             Assert.IsFalse(machine.IsHalted);
         }
@@ -100,12 +101,12 @@ namespace Cdelta.Tests
                 machine.Invoke(c);
             }
 
-            Assert.AreEqual<LowerCamelCase.State>(LowerCamelCaseMachine.State.LowerChar, machine.CurrentState);
+            Assert.AreEqual(LowerCamelCaseMachine.State.LowerChar, machine.CurrentState);
             Assert.IsTrue(machine.IsAcceptingState);
             Assert.IsFalse(machine.IsHalted);
         }
 
-        class LowerCamelCase : LowerCamelCaseMachine
+        private class LowerCamelCase : LowerCamelCaseMachine
         {
             protected override bool CanTransition_Init_LowerChar(char value) => char.IsLower(value);
 
