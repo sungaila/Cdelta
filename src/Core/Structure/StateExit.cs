@@ -6,9 +6,18 @@ namespace Cdelta.Structure
 {
     internal class StateExit : StructureBase
     {
-        public string ExitStateMethod { get => $"ExitState{((State)Parent!).Identifier}"; }
+        public string ExitStateMethod { get => $"ExitState_{((State)Parent!).Identifier}"; }
 
         public override string ToCode()
-            => $"protected virtual void {ExitStateMethod}() {{ }}";
+        {
+            var result = new StringBuilder();
+
+            result.AppendLine("/// <summary>");
+            result.AppendLine($"/// Called when <see cref=\"State.{((State)Parent!).Identifier}\"/> is left.");
+            result.AppendLine("/// </summary>");
+            result.Append($"protected virtual void {ExitStateMethod}() {{ }}");
+
+            return result.ToString();
+        }
     }
 }

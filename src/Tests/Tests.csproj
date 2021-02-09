@@ -20,7 +20,7 @@
     <None Remove="Test.cdelta" />
   </ItemGroup>
   <ItemGroup>
-    <AdditionalFiles Include="Test.cdelta" />
+    <AdditionalFiles Include="Automata\LowerCamelCaseMachine.cdelta" />
   </ItemGroup>
 
   <!-- Project references -->

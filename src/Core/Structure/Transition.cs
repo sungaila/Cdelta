@@ -23,18 +23,22 @@ namespace Cdelta.Structure
             TargetIdentifier = targetIdentifier;
         }
 
-        public string CanTransitionMethod { get => $"CanTransition{SourceIdentifier}{TargetIdentifier}"; }
+        public string CanTransitionMethod { get => $"CanTransition_{SourceIdentifier}_{TargetIdentifier}"; }
 
         public override string ToCode()
         {
             var result = new StringBuilder();
 
-            result.Append($"protected abstract bool {CanTransitionMethod}({((Automaton)Parent!).DataType} value);");
+            result.AppendLine("/// <summary>");
+            result.AppendLine($"/// Decides if a transition from <see cref=\"State.{SourceIdentifier}\"/> to <see cref=\"State.{TargetIdentifier}\"/> is possible.");
+            result.AppendLine("/// </summary>");
+            result.AppendLine("/// <param name=\"value\">The input this automaton is currently evaluating.</param>");
+            result.Append($"protected abstract bool {CanTransitionMethod}({(((Automaton)Parent!).IsGenericType ? "T" : ((Automaton)Parent!).DataType)} value);");
 
             if (Enter != null)
             {
-                result.Append(Environment.NewLine);
-                result.Append(Environment.NewLine);
+                result.AppendLine();
+                result.AppendLine();
                 result.Append(Enter.ToCode());
             }
 

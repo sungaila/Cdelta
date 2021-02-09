@@ -1,10 +1,7 @@
-﻿using Antlr4.Runtime.Misc;
-using Cdelta.Language;
+﻿using Cdelta.Language;
 using Cdelta.Structure;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using static Cdelta.Structure.Automaton;
 
 namespace Cdelta
 {
@@ -31,7 +28,6 @@ namespace Cdelta
             var result = new Automaton(context.IDENTIFIER().GetText())
             {
                 Modifier = context.accessModifier()?.GetText(),
-                IsAbstract = context.ABSTRACT() != null,
                 IsPartial = context.PARTIAL() != null,
                 DataType = context.automatonDataType()?.GetText()
             };

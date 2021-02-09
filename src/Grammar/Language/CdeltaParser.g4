@@ -7,7 +7,7 @@ codeFile			: namespace EOF;
 
 namespace : NAMESPACE IDENTIFIER (DOT IDENTIFIER)* CURLY_OPEN automatonDefinition automatonDefinition*? CURLY_CLOSE;
 
-automatonDefinition	: accessModifier? ABSTRACT? PARTIAL? AUTOMATON IDENTIFIER (LESS_THAN automatonDataType GREATER_THAN)? CURLY_OPEN automatonBody CURLY_CLOSE;
+automatonDefinition	: accessModifier? PARTIAL? AUTOMATON IDENTIFIER (LESS_THAN automatonDataType GREATER_THAN)? CURLY_OPEN automatonBody CURLY_CLOSE;
 
 accessModifier
 	: PROTECTED INTERNAL

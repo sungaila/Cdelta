@@ -29,7 +29,6 @@ INTERNAL			: 'internal';
 PROTECTED			: 'protected';
 PRIVATE				: 'private';
 
-ABSTRACT			: 'abstract';
 PARTIAL				: 'partial';
 
 // The following elements are taken from the grammars-v4 repository

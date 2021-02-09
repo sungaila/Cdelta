@@ -34,8 +34,8 @@ namespace Cdelta.Structure
             {
                 if (result.Length > 0)
                 {
-                    result.Append(Environment.NewLine);
-                    result.Append(Environment.NewLine);
+                    result.AppendLine();
+                    result.AppendLine();
                 }
 
                 result.Append(Exit.ToCode());

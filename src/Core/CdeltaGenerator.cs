@@ -12,7 +12,7 @@ using System.Text;
 namespace Cdelta
 {
     /// <summary>
-    /// Test
+    /// Generates C# source code out of *.cdelta files.
     /// </summary>
     [Generator]
     public class CdeltaGenerator : ISourceGenerator
@@ -48,9 +48,12 @@ namespace Cdelta
                 var result = visitor.Visit(parsed);
 
                 var code = result.First().ToCode();
-
                 context.AddSource($"{Path.GetFileName(file.Path)}.cs", code);
             }
+
+            using Stream stream = typeof(CdeltaGenerator).Assembly.GetManifestResourceStream("Cdelta.IAutomaton.cs");
+            using StreamReader reader = new StreamReader(stream);
+            context.AddSource("IAutomaton.cs", reader.ReadToEnd());
         }
 
         /// <inheritdoc/>
