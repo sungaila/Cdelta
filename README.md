@@ -1,4 +1,4 @@
-﻿﻿﻿<img src="https://raw.githubusercontent.com/sungaila/Cdelta/master/etc/Icon.png" align="left" width="64" height="64" alt="Cdelta Logo">
+﻿<img src="https://raw.githubusercontent.com/sungaila/Cdelta/master/etc/Icon.png" align="left" width="64" height="64" alt="Cdelta Logo">
 
 # Cdelta
 [![Azure DevOps builds (branch)](https://img.shields.io/azure-devops/build/sungaila/2feb76e5-ff0c-4623-8319-722a43829660/3/master?style=flat-square)](https://dev.azure.com/sungaila/Cdelta/_build/latest?definitionId=3&branchName=master)
