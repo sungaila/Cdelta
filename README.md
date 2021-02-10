@@ -74,7 +74,7 @@ class LowerCamelCase : LowerCamelCaseMachine
 ```csharp
 var machine = new LowerCamelCase();
 
-foreach (var c in "imputToTest")
+foreach (var c in "inputToTest")
     machine.Invoke(c);
 
 Assert.IsTrue(machine.IsAcceptingState);
