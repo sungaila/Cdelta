@@ -20,7 +20,7 @@
     <PackageIcon>Icon_128.png</PackageIcon>
     <PackageProjectUrl>https://github.com/sungaila/Cdelta</PackageProjectUrl>
     <PackageIconUrl>https://raw.githubusercontent.com/sungaila/Cdelta/master/etc/Icon_128.png</PackageIconUrl>
-    <Description>A C# source generator for finite-state machines.</Description>
+    <Description>A C# source generator for finite-state machines ‐ easily referenced as a Roslyn analyzer.</Description>
     <PackageReleaseNotes>Initial preview release</PackageReleaseNotes>
     <PackageTags>Roslyn CodeAnalysis Compiler Transpiler CSharp C# Analyzers DotNetAnalyzers StateMachine Cdelta Cδ SourceGenerator ISourceGenerator state-machine StateMachine Automaton Automata NFA DFA</PackageTags>
     <RepositoryUrl>https://github.com/sungaila/Cdelta.git</RepositoryUrl>

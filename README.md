@@ -1,4 +1,4 @@
-﻿﻿<img src="https://raw.githubusercontent.com/sungaila/Cdelta/master/etc/Icon.png" align="left" width="64" height="64" alt="Cdelta Logo">
+﻿﻿﻿<img src="https://raw.githubusercontent.com/sungaila/Cdelta/master/etc/Icon.png" align="left" width="64" height="64" alt="Cdelta Logo">
 
 # Cdelta
 [![Azure DevOps builds (branch)](https://img.shields.io/azure-devops/build/sungaila/2feb76e5-ff0c-4623-8319-722a43829660/3/master?style=flat-square)](https://dev.azure.com/sungaila/Cdelta/_build/latest?definitionId=3&branchName=master)
@@ -7,7 +7,7 @@
 [![NuGet downloads](https://img.shields.io/nuget/dt/Cdelta.svg?style=flat-square)](https://www.nuget.org/packages/Cdelta/)
 [![GitHub license](https://img.shields.io/github/license/sungaila/Cdelta?style=flat-square)](https://github.com/sungaila/Cdelta/blob/master/LICENSE)
 
-A C# source generator for finite-state machines.
+A [C# source generator](https://devblogs.microsoft.com/dotnet/introducing-c-source-generators/) for [finite-state machines](https://en.wikipedia.org/wiki/Finite-state_machine) ‐ easily referenced as a [Roslyn analyzer](https://github.com/dotnet/roslyn-analyzers).
 
 Looking for the master's thesis *C𝛿: Design and Implementation of a Transcompiler for Language Integrated Finite-State Machines in C♯*? Look here: https://github.com/sungaila/CdeltaLegacy
 
