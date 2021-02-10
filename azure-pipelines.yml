@@ -13,11 +13,13 @@ jobs:
 - job: Build
   displayName: 'Build'
   steps:
-  - task: DotNetCoreCLI@2
+  - task: MSBuild@1
     displayName: 'Build solution'
     inputs:
-      command: 'build'
-      arguments: '-c $(buildConfiguration) -p:VersionSuffix=ci'
+      solution: 'Cdelta.sln'
+      msbuildArchitecture: 'x64'
+      configuration: '$(buildConfiguration)'
+      msbuildArguments: '-p:VersionSuffix=ci' 
   - task: PublishPipelineArtifact@1
     displayName: 'Publish project assemblies'
     inputs:

@@ -4,8 +4,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>Cdelta</AssemblyName>
     <RootNamespace>Cdelta</RootNamespace>
-    <EmbedAllSources>true</EmbedAllSources>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <IsPackable>false</IsPackable>
   </PropertyGroup>
 
   <!-- C# compiler -->
