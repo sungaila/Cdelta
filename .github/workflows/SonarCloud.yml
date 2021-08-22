@@ -49,5 +49,5 @@ jobs:
           .\.sonar\scanner\dotnet-sonarscanner begin /k:"sungaila_Cdelta" /o:"sungaila" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /v:"$LatestGitTag" /d:sonar.cs.vstest.reportsPaths="**/*.trx" /d:sonar.cs.vscoveragexml.reportsPaths="**/*.coveragexml"
           dotnet build Cdelta.sln -c Debug -p:VersionSuffix=ci
           dotnet test src\Tests\Tests.csproj --logger trx --collect "Code Coverage"
-          dotnet-coverageconverter --CoverageFilesFolder "src\Tests\TestResults"
+          dotnet-coverageconverter --CoverageFilesFolder "TestResults"
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
