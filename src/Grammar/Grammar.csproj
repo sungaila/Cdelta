@@ -18,17 +18,19 @@
   </PropertyGroup>
 
   <!-- Debug builds -->
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+  <PropertyGroup Condition="'$(Configuration)'=='Debug'">
     <VersionSuffix>debug</VersionSuffix>
     <NoWarn>1701;1702;3021;1584;1658</NoWarn>
   </PropertyGroup>
 
   <!-- Release builds -->
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+  <PropertyGroup Condition="'$(Configuration)'=='Release'">
     <Optimize>true</Optimize>
     <NoWarn>1701;1702;3021;1584;1658</NoWarn>
+    <Deterministic>true</Deterministic>
+    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
   </PropertyGroup>
-  
+
   <ItemGroup>
     <None Include="obj\$(Configuration)\netstandard2.0\CdeltaLexer.cs" />
     <None Include="obj\$(Configuration)\netstandard2.0\CdeltaParser.cs" />

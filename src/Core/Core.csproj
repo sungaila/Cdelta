@@ -13,7 +13,7 @@
   <!-- NuGet -->
   <PropertyGroup>
     <VersionPrefix>1.0.0</VersionPrefix>
-    <VersionSuffix>preview1</VersionSuffix>
+    <VersionSuffix>preview2</VersionSuffix>
     <Authors>David Sungaila</Authors>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
@@ -36,30 +36,32 @@
     <LangVersion>9.0</LangVersion>
     <Nullable>enable</Nullable>
     <Features>strict</Features>
-    <WarningsAsErrors>nullable;NU1605</WarningsAsErrors>
+    <WarningsAsErrors>nullable</WarningsAsErrors>
     <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
     <EnableNETAnalyzers>true</EnableNETAnalyzers>
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
 
   <!-- Debug builds -->
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+  <PropertyGroup Condition="'$(Configuration)'=='Debug'">
     <VersionSuffix>debug</VersionSuffix>
     <NoWarn>1701;1702;3021;NU5128</NoWarn>
   </PropertyGroup>
 
   <!-- Release builds -->
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+  <PropertyGroup Condition="'$(Configuration)'=='Release'">
     <SignAssembly>true</SignAssembly>
     <Optimize>true</Optimize>
     <NoWarn>1701;1702;3021;NU5128</NoWarn>
+    <Deterministic>true</Deterministic>
+    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
   </PropertyGroup>
-  
+
   <ItemGroup>
     <Compile Remove="IAutomaton.cs" />
     <EmbeddedResource Include="IAutomaton.cs" />
   </ItemGroup>
-  
+
   <!-- NuGet Icon -->
   <ItemGroup>
     <None Include="..\..\etc\Icon_128.png" Pack="True" PackagePath="" Visible="False" />
@@ -70,7 +72,7 @@
   <!-- SourceLink build steps -->
   <ItemGroup>
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="all" />
-    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="3.8.0" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="3.11.0" PrivateAssets="all" />
     <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.2" PrivateAssets="all" />
     <PackageReference Include="Antlr4.Runtime" Version="4.6.6" PrivateAssets="all" />
   </ItemGroup>

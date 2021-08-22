@@ -12,20 +12,15 @@ pool:
 jobs:
 - job: Build
   displayName: 'Build'
+  pool:
+    vmImage: 'windows-latest'
   steps:
-  - task: NuGetCommand@2
-    displayName: 'NuGet restore'
-    inputs:
-      command: 'restore'
-      restoreSolution: 'Cdelta.sln'
-      feedsToUse: 'select'
-  - task: MSBuild@1
+  - task: DotNetCoreCLI@2
     displayName: 'Build solution'
     inputs:
-      solution: 'Cdelta.sln'
-      msbuildArchitecture: 'x64'
-      configuration: '$(buildConfiguration)'
-      msbuildArguments: '-p:VersionSuffix=ci' 
+      command: 'build'
+      arguments: '-c $(buildConfiguration) -p:VersionSuffix=ci'
+      workingDirectory: 'src'
   - task: PublishPipelineArtifact@1
     displayName: 'Publish project assemblies'
     inputs:
@@ -57,6 +52,16 @@ jobs:
 - job: Test
   displayName: 'Test'
   dependsOn: Build
+  strategy:
+    matrix:
+      Windows:
+        imageName: 'windows-latest'
+      Linux:
+        imageName: 'ubuntu-latest'
+      macOS:
+        imageName: 'macOS-latest'
+  pool:
+    vmImage: $(imageName)
   steps:
   - checkout: none
     displayName: 'Skip checkout'
@@ -66,13 +71,9 @@ jobs:
       buildType: 'current'
       artifactName: 'Tests'
       targetPath: '$(Pipeline.Workspace)'
-  - task: VSTest@2
+  - task: DotNetCoreCLI@2
     displayName: 'Run tests'
     inputs:
-      testSelector: 'testAssemblies'
-      testAssemblyVer2: '$(Pipeline.Workspace)\**\net5.0\Cdelta.Tests.dll'
-      searchFolder: '$(System.DefaultWorkingDirectory)'
-      runTestsInIsolation: true
-      codeCoverageEnabled: true
-      platform: '$(buildPlatform)'
-      configuration: '$(buildConfiguration)'
+      command: 'test'
+      arguments: '$(Pipeline.Workspace)\**\net50\Cdelta.Tests.dll'
+      testRunTitle: '.NET 5.0 ($(agent.os))'

@@ -1,13 +1,10 @@
 ﻿using Antlr4.Runtime;
 using Cdelta.Language;
 using Microsoft.CodeAnalysis;
-using Microsoft.CodeAnalysis.Text;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Text;
 
 namespace Cdelta
 {
