@@ -1,5 +1,6 @@
 #pragma warning disable IDE1006
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+[assembly: Parallelize(Scope = ExecutionScope.MethodLevel)]
 
 namespace Cdelta.Tests
 {

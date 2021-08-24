@@ -12,7 +12,8 @@
     <LangVersion>9.0</LangVersion>
     <Nullable>enable</Nullable>
     <Features>strict</Features>
-    <WarningsAsErrors>nullable;NU1605</WarningsAsErrors>
+    <NoWarn>1701;1702;3021;1584;1658</NoWarn>
+    <WarningsAsErrors>nullable</WarningsAsErrors>
     <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
     <EnableNETAnalyzers>true</EnableNETAnalyzers>
   </PropertyGroup>
@@ -20,24 +21,22 @@
   <!-- Debug builds -->
   <PropertyGroup Condition="'$(Configuration)'=='Debug'">
     <VersionSuffix>debug</VersionSuffix>
-    <NoWarn>1701;1702;3021;1584;1658</NoWarn>
   </PropertyGroup>
 
   <!-- Release builds -->
   <PropertyGroup Condition="'$(Configuration)'=='Release'">
     <Optimize>true</Optimize>
-    <NoWarn>1701;1702;3021;1584;1658</NoWarn>
     <Deterministic>true</Deterministic>
     <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="obj\$(Configuration)\netstandard2.0\CdeltaLexer.cs" />
-    <None Include="obj\$(Configuration)\netstandard2.0\CdeltaParser.cs" />
-    <None Include="obj\$(Configuration)\netstandard2.0\CdeltaParserBaseListener.cs" />
-    <None Include="obj\$(Configuration)\netstandard2.0\CdeltaParserBaseVisitor.cs" />
-    <None Include="obj\$(Configuration)\netstandard2.0\CdeltaParserListener.cs" />
-    <None Include="obj\$(Configuration)\netstandard2.0\CdeltaParserVisitor.cs" />
+    <None Include="obj\$(Configuration)\$(TargetFramework)\CdeltaLexer.cs" />
+    <None Include="obj\$(Configuration)\$(TargetFramework)\CdeltaParser.cs" />
+    <None Include="obj\$(Configuration)\$(TargetFramework)\CdeltaParserBaseListener.cs" />
+    <None Include="obj\$(Configuration)\$(TargetFramework)\CdeltaParserBaseVisitor.cs" />
+    <None Include="obj\$(Configuration)\$(TargetFramework)\CdeltaParserListener.cs" />
+    <None Include="obj\$(Configuration)\$(TargetFramework)\CdeltaParserVisitor.cs" />
   </ItemGroup>
 
   <!-- SourceLink build steps -->

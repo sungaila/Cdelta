@@ -74,5 +74,5 @@ jobs:
     displayName: 'Run tests'
     inputs:
       command: 'test'
-      arguments: '$(Pipeline.Workspace)\**\net50\Cdelta.Tests.dll'
+      arguments: '$(Pipeline.Workspace)\**\net5.0\Cdelta.Tests.dll'
       testRunTitle: '.NET 5.0 ($(agent.os))'
